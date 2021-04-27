@@ -42,7 +42,7 @@ class block_testblock extends block_base {
             return $this->content;
         }
         $systemcontext = context_system::instance();
-
+        // to check if not admin
         if (!user_has_role_assignment($userid, 5)) {
             
             $this->content = new stdClass;
@@ -116,7 +116,7 @@ class block_testblock extends block_base {
         }
 
 
-
+        // if admin show all blocks
         if (is_siteadmin())
         {
         // show all
